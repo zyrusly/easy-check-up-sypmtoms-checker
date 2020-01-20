@@ -1,0 +1,107 @@
+
+.symptom_container{
+	background-color: white;
+	padding-top: 15px;
+
+	width: 95%;
+	height:60px;
+	margin:5px 5px 5px 5px;
+	color: gray;
+	font-family: Arial, Helvetica, sans-serif;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+	font-size: 12pxl;
+	
+}
+
+.symptom_container:hover{
+	background-color: #176b83;
+	color: #f7f7f7;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding-top: 20px;
+	width: 97%;
+	height:70px;
+	font-size: medium;
+}
+.scrollbox{
+	margin: 50px auto;
+	background: /* Shadow covers */
+	linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
+	radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+	background: /* Shadow covers */
+	linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
+	radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+	/* Opera doesn't support this in the shorthand */
+	background-attachment: local, local, scroll, scroll;
+  }
+.symptom_list_container {
+
+	background-color: #f7f7f7;
+	margin:20px;
+	padding: 25px;
+	overflow-y: scroll;
+	height:60%;
+	width:75%;
+	margin: auto;
+	border-radius: 20px;
+}
+.symptom_list_container::-webkit-scrollbar {
+	display: none;
+}
+.title{
+	background-color: #104EB2;
+	padding: 25px;
+	color: #fff;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.get_diagnosis_container{
+	width: 50%;
+	padding: 25px;
+	border: 5px solid #303030;
+	margin-bottom: 20px;
+	margin-left: 25%;
+	margin: auto;
+}
+
+
+.diagnosis_details_container{
+	background-color: white;
+	padding: 5px;
+	border: 3px solid #101010;
+	width: 95%;
+	
+	margin:10px 10px 10px 10px;
+	color: #202020;
+	font-family: Verdana;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.diagnosis_list_container{
+	margin:20px;
+	padding: 25px;
+	border: 5px solid white;
+}
+
+.treatment_button{
+	margin: 5px 5px 5px 5px;
+}
+
+
+/*STYLE FOR REGISTRATION APP BEGINS*/
+
+.login-register-panel{
+	background-color: white;
+	padding: 20px;
+	border: 3px solid #101010;
+	width: 15%;
+	margin:auto;
+	color: #202020;
+	font-family: Verdana;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

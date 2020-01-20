@@ -1,0 +1,5 @@
+install:
+
+pip install django-widget-tweaks
+pip install requests
+use chrome browser

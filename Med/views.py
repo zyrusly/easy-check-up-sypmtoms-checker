@@ -7,6 +7,7 @@ import ast,json
 from .models import Symptoms,Issue
 from Med.forms import InputForm
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 
 def getAuthToken():
@@ -59,8 +60,23 @@ def home(request):
 		sy.symptom_id=x['ID']
 		sy.symptom_desc=x['Name']
 		sy.save()
+		symptom_val = []
+	if request.method == 'POST':
+		
+		symptom_val = request.POST.getlist('symp_id')
+		print(symptom_val)
+		i = ','.join(map(str,symptom_val)) 
+		print( i)
+		return redirect('/'+str(i)+'/')
 
-	return render(request,'Med/index.html',{'symptom_list':s_dict})
+
+	
+
+	
+	# context = {'symptom_id':symp_id}
+
+
+	return render(request,'Med/index.html',{'symptom_list':s_dict, 'symptom_id':symptom_val,})
 
 
 
@@ -112,7 +128,7 @@ def symptom_diagnosis(request,symptom_id,yob,gender):
 
 	ct=0
 	treatment_desc=[]
-
+	symptom_desc=Symptoms.objects.get(symptom_id=symptom_id)
 	for x in diagnosis_list:
 		issue_id = x["Issue"]["ID"]
 		ct=ct+1;
@@ -121,7 +137,7 @@ def symptom_diagnosis(request,symptom_id,yob,gender):
 			#If issue is found in database we can directly fetch it from the table to display treatment options.
 			issue_object = Issue.objects.get(issue_id=issue_id)
 			x["Issue"]["TreatmentDescription"]=issue_object.treatment_details
-
+			
 		except:
 			#If issue is not in the database we need to request it from the API
 			ISSUE_INFO_ENDPOINT = 'https://sandbox-healthservice.priaid.ch/issues/'+ str(issue_id) +'/info?token='+ACCESS_TOKEN+'&language=en-gb'
@@ -151,7 +167,7 @@ def symptom_diagnosis(request,symptom_id,yob,gender):
 		
 
 
-	return render(request,'Med/diagnosis.html',{'diagnosis_list':diagnosis_list})
+	return render(request,'Med/diagnosis.html',{'diagnosis_list':diagnosis_list,'symptom_desc':symptom_desc,})
 
 
 

@@ -26,7 +26,7 @@
 	  <div id="navbarSupportedContent" class="collapse navbar-collapse">
 		<ul class="navbar-nav ml-auto">
 		<li class="nav-item ml-2"><a href="{% url 'home' %}" class="nav-link">Symptoms</a></li>
-		  <li class="nav-item ml-2"><a href="#" class="nav-link">Profile ({{request.user.username}}) </a></li>
+		  <li class="nav-item ml-2"><a href="{% url 'profiled' %}" class="nav-link">Profile: ({{user.username}}) </a></li>
 		  <li class="nav-item ml-2"><a href="{% url 'logout' %}" class="nav-link">Logout </a></li>
   
 		</ul>

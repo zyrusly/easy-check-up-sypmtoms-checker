@@ -9,6 +9,14 @@
 				</span>
 				{% endblock login %}
 {% block base_block %}
+{% if user.is_authenticated %}
+
+<h3 style="text-align: center;"> You are Logged-In as {{user}}</h3>
+<br>
+<div style="text-align:center; " ><a  style="text-decoration:none;font-size:larger; color:rgb(112, 177, 48); "href="{% url 'home' %}"> Go to symptoms page </a></div>
+
+
+{% else %}
 
 	<form method="POST" class="login100-form validate-form p-b-33 p-t-5">
 		{% csrf_token %}
@@ -30,5 +38,5 @@
 	</form>
 	<br>
 	<p style="color: aliceblue; text-align:center;">Not a member yet? <a style="color: blue;" href="{% url 'register' %}">Click Here</a> to register</p>
-
+{% endif %}
 {% endblock %}

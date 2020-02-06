@@ -11,24 +11,45 @@
 
 <br>
 <div class="container">
-<div align="center">
-	<h2 class="display-5">Select your symptom</h2>
-</div>
-<br>
-
-<div class=" scrollbox symptom_list_container">
-	<div class="row">
-		{% for x,y in symptom_list.items %}
-		<div class="col-lg-3" align="center">
-			<a href="{% url 'symptom_page' x %}">
-			<div class="symptom_container" align="center">
-				{{y}}
-			</div>
-			</a>
+	
+		<div align="center">
+			<h2 class="display-5">Select your symptom</h2>
 		</div>
-		{% endfor %}
-	</div>
-</div>
+<br>
+	<form method="POST">{% csrf_token %}
+		<div class=" scrollbox symptom_list_container">
+			<div class="row">
+				
+							{% for x,y in symptom_list.items %}
+							<div class="col-lg-3" align="center">
+								<!-- <a href="{% url 'symptom_page' x %}"> -->
+									
+										<input type="checkbox" name="symp_id" value ="{{x}}">
+									
+									
+										<div class="symptom_container" align="center">
+											{{y}}
+										</div>
+								<!-- </a> -->
+							</div>
+							
+							{% endfor %}
+
+					
+			</div>
+			
+		</div>
+		<br>
+		<div align="center">
+			<button class="btn btn-success ml-lg-5 btn-lg "type="submit" value="submit">   <h4 style="color: cornsilk;"></h4>Next</h4> </button>
+		</div>
+
+	</form>
+
+{% for n in symptom_id %}
+<p>{{n}}</p>
+{% endfor %}
+
 </div>
 
 {% endblock %}

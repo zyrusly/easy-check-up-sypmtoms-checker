@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 
 
 
+
 def check_password(password,password_repeat):
 	if password == password_repeat:
 		return True
@@ -17,7 +18,7 @@ def register(req):
 	error=""
 
 	if req.user.is_authenticated:
-		return HttpResponseRedirect('home')
+		return HttpResponseRedirect('../login')
 
 	if req.method == 'POST':
 		form = RegisterForm(req.POST)
@@ -30,12 +31,14 @@ def register(req):
 			if check_password(password,password_repeat):
 				new_user = User.objects.create_user(username=username,password=password)
 				new_user.save()
-				new_user = authenticate(req,username=username,password=password)
+				# new_user = authenticate(req,username=username,password=password)
+				
 
-				if new_user is not None:
-					login(req, new_user)
 
-				return HttpResponseRedirect( 'home' )
+				# if new_user is not None:
+				# 	login(req, new_user)
+
+				return HttpResponseRedirect( '../login' )
 			else:
 				error = "Passwords entered do not match!"
 

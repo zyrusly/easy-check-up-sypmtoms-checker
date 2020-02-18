@@ -14,11 +14,11 @@ def getAuthToken():
 	# Authentication PART: To obtain Access Token
 
 	END_POINT = 'https://sandbox-authservice.priaid.ch/login'
-	API_KEY = 'tmsreekanth98@gmail.com'
-	SECRET_KEY = 'q7T8Qzn3BSk6j2YWt'
+	API_KEY = ''
+	SECRET_KEY = ''
 	
 	#Authorization header as per API documentation
-	AUTH_HEADER = 'Bearer tmsreekanth98@gmail.com:2XmUO5zQED3gMqFxfLXMdQ=='
+	AUTH_HEADER = 'Bearer'
 
 	headers = {
 		'Authorization':AUTH_HEADER,

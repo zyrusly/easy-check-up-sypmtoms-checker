@@ -4,7 +4,7 @@ symptoms diagnostic tool using apimedic symptoms analyzer api
 ## Built using Api medic Diagnostic Api
 https://apimedic.com/
 
-##dependencies 
+## dependencies 
 -- django
 -- python-decoupler (handling environment variables)
 
@@ -13,7 +13,7 @@ https://apimedic.com/
 -- incomplete Pages
 
 ## Fill-out environment variable in (.env file)
-SECRET_KEY= ( in django settings )
-DEBUG= ( in django settings )
-API_KEY= ( provided by API ) 
-SECRET_API_KEY= ( provided by API )
+# SECRET_KEY= ( in django settings )
+# DEBUG= ( in django settings )
+# API_KEY= ( provided by API ) 
+# SECRET_API_KEY= ( provided by API )

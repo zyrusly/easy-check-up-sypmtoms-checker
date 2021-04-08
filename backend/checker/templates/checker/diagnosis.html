@@ -1,0 +1,48 @@
+{% extends 'checker/index.html' %}
+{% load static %}
+    
+{% block head_block %}
+    <title>Diagnosis</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/css/card-flip.css'%}"/> -->
+    <link rel="stylesheet" href="{% static 'css/css/diagnosis_styles.css'%}"/>
+    <!-- <link rel="stylesheet" href="../../static/css/css/diagnosis_styles.css"/> -->
+{% endblock %}
+
+{% block symptom_block %}
+<div class='head-title'>
+<h1>Your Symptoms were analyzed, these are the results...</h1>
+</div>
+<div class='parent-class'>
+    {% for issues in diagnosis %}
+        <div class='issues-class'>
+            <div class='flip-card'>
+                <div class='flip-card-front'>
+                    <div class='issue'>
+                        <h4>{{issues.Issue.Name}}</h4>
+                        <p class='Probability'> Probability: <h3>{{issues.Issue.Accuracy}}%</h3></p>
+                        <p class='term'>Medical Term <h6>{{issues.Issue.ProfName}}</h6></p>
+                        
+                    </div>
+                    
+                </div>
+                <div class='flip-card-back'>
+                    <div class='issue-detail'>
+                        {% for items in issue_item %}
+                            {% if issues.Issue.Name == items.Name %}
+                            <p class='desc-class'>{{items.DescriptionShort}}</p>
+                            {% endif %}
+                        {% endfor %}
+                        <div class='experts'>
+                            Doctors:<br>
+                            {% for experts in issues.Specialisation %}
+                                {{experts.Name}}<br>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    {% endfor %}
+</div>
+{% endblock %}
+

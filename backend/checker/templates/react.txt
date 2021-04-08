@@ -1,0 +1,60 @@
+npm init
+npm install --save
+nmp install -g
+npm install --save-dev
+
+npx create-react-app <app name>
+
+npm start
+
+  build --> static assets
+
+  
+delete files from src except index.js
+
+--> import React from 'react' (es6 import react dependencies)
+==> create a react component 
+-->jsx
+
+--> import ReactDom from 'react-dom'
+==> to render to  root, ReactDom.render(<function_name />, document.getElementByID('target id'))
+
+prettier - code formatter
+ > format > format on paste > format of save
+
+emmet.includeLanguages: {
+    javascript:'javascriptreact'
+}
+
+es7 
+
+*! always return something
+
+<React.Fragment>     
+*! class -> className
+// return a single element 
+// use camel case for hltm attribute
+// close every element
+// formatting 
+jsx rules 
+
+nested component, react tools
+
+--> <componentName /> --> inside a component 
+
+Css 
+import 'path to css'
+* children - placed between openong and closing 
+
+! accessing array of objects
+<arrayName.map((<assignedVariableNamePerItem) =>
+{
+    !! common convention == const { 'key1', 'key2'} = assignedVariableNamePerItem
+    return value
+}
+)
+3:14
+
+ create a logo
+
+ 

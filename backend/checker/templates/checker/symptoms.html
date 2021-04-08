@@ -1,0 +1,52 @@
+{% extends 'checker/index.html' %}
+{% load static %}
+
+{% block head_block %}
+    <title>Checker</title>
+    <link rel="stylesheet" href="{% static 'css/css/symptoms_style.css' %}"/>
+    <!-- <link rel="stylesheet" href="static/css/bootstrap/bootstrap.css"/> -->
+    <!-- <link rel="stylesheet" href="static/css/font-awesome-css/all.css"/> -->
+{% endblock %}
+{% block symptom_block %}
+    <div class='title-head'>
+        <h2>DIAGNOSE YOUR SYMPTOMS</h2>
+        <h4> Select your SYMPTOMS and fill-out the form..</h4>
+    </div>
+    
+    <div class='form-container'>
+        <form method='POST' class='form-class'>
+            {% csrf_token %}
+            <div class='symptoms-container'>
+                {% for items in symptoms %}
+
+                            <div class='checkbox-class'>
+                                    <input type="checkbox"  id='{{items.ID}}' class="input-checkbox" autocomplete="off" name="proposed_symptoms" value={{items.ID}}>
+                                    <label for={{items.ID}} class= 'symptom'>{{items.Name}}</label>          
+                            </div>
+                        
+                {% endfor %}
+            </div>   
+            <br>
+            <div class='gender-form-container'>
+                <div class="male-class">
+                    <!-- <i class="material-icons">male</i> -->
+                    <input type="radio" id="male" style='display:none' autocomplete='off' name="gender" value="male" checked>
+                    <label for="male" id='male-label' >Male</label>
+                </div>
+                <div class='female-class'>
+                    <!-- <i class="material-icons f-icon">female</i> -->
+                    <input type="radio" id="female" style='display:none' autocomplete='off' name="gender" value="female">
+                    <label id='female-label' for="female">Female</label>
+                </div>
+                <div class='year-of-birth'>
+                    <input type="number" id="year_of_birth"  min="1900" max="2099" step="1"  name="year_of_birth" />
+                    <label for="year_of_birth" id="year-of-birth">Birth Year</label>
+                </div>
+            </div>
+            <br>
+            <div class='submit-container'>
+            <button type="submit" class='submit-class'>Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

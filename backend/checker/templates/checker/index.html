@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'css/css/index_styles.css' %}">
+    <!-- <link rel="stylesheet" href="../../static/css/css/index_styles.css"> -->
+    {% block head_block %}
+    {% endblock %}
+    
+</head>
+<body>
+    <header class="header-class">
+      <div class='logo-class'>
+        <img  class='image-logo' src="{% static 'img/icon-sample.png' %}">
+          <a href="#" class="brand">Symptoms Checker</a>
+      </div>
+            <nav class="nav">
+                <ul class="nav_wrapper">
+                    <li class="nav_home"><a href="{% url 'symptoms' %}">Home</a></li>
+                    <li class="nav_about"><a href="#">About</a></li>
+                </ul>
+            </nav>
+    </header>
+{% block symptom_block %}
+<p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae debitis nesciunt quia doloribus maxime rerum optio consequuntur, molestias tempora, sequi dolore ad possimus quod recusandae! Perspiciatis debitis tempore minima sint!
+</p>
+{% endblock %}
+<footer class="footer-container">
+    <ul class='footer-ul'>
+        <li class="footer-li">Contact</li>
+        <li class="footer-li">Links</li>
+        <li class="footer-li"> 2021</li>
+        
+    </ul>
+
+    
+</footer>
+    
+</body>
+</html>

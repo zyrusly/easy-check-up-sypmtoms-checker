@@ -5,15 +5,15 @@ symptoms diagnostic tool using apimedic symptoms analyzer api
 https://apimedic.com/
 
 ## dependencies 
--- django
--- python-decoupler (handling environment variables)
+- django
+- python-decoupler (handling environment variables)
 
 ## issues
--- incomplete UI
--- incomplete Pages
+- incomplete UI
+- incomplete Pages
 
 ## Fill-out environment variable in (.env file)
-# SECRET_KEY= ( in django settings )
-# DEBUG= ( in django settings )
-# API_KEY= ( provided by API ) 
-# SECRET_API_KEY= ( provided by API )
+- SECRET_KEY= ( in django settings )
+- DEBUG= ( in django settings )
+- API_KEY= ( provided by API ) 
+- SECRET_API_KEY= ( provided by API )

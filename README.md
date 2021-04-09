@@ -11,6 +11,7 @@ https://apimedic.com/
 ## issues
 - incomplete UI
 - incomplete Pages
+- create unit test
 
 ## Fill-out environment variable in (.env file)
 - SECRET_KEY= ( in django settings )
